@@ -1,11 +1,13 @@
 import styles from "./App.module.scss";
-import NavTest from "./Components/NavTest/NavTest";
+import Header from "./Components/Header/Header";
+
 import SideNav from "./Components/SideNav/SideNav";
 
 function App() {
   return (
     <div className={styles.container}>
-   <SideNav/>
+      <Header />
+      <SideNav />
     </div>
   );
 }

@@ -2,6 +2,8 @@
   position: fixed;
 
   top: 0px;
+  top: 150px;
+  top: 140px;
   //   left: 20px;
   bottom: 20px;
   bottom: 100px;
@@ -12,8 +14,10 @@
   border-bottom-right-radius: 20px;
   box-sizing: initial;
   border-left: 5px solid #13a04c;
+  border-left: 5px solid #E2E2E6;
   background-color: #4d5bf9;
   background: #13a04c;
+  background-color:#E2E2E6 ;
   transition: width 0.5s linear;
   font-size: 2rem;
   overflow: hidden;
@@ -22,7 +26,9 @@
 .ul {
   position: absolute;
   top: 10px;
-  left: 0;
+  top: 20px;
+ 
+  // left: 16px;
   width: 100%;
   padding-left: 5px;
   padding-top: 40px;
@@ -58,30 +64,32 @@
   display: block;
   min-width: 60px;
   height: 60px;
-  line-height: 70px;
+  line-height: 75px;
   text-align: center;
   overflow: hidden !important;
 }
 
 .icon ion-icon {
   font-size: 1.5em;
+  color: black;
 }
 
 .title {
   position: relative;
-
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
   display: block;
   padding-left: 10px;
   height: 60px;
 
   line-height: 60px;
-
+  color: black;
   white-space: normal;
   text-transform: capitalize;
-
+  font-size: 1.7rem;
   overflow: hidden !important;
   // margin-left: 120px;
-  margin-right: 3rem;
+  margin-right: 2rem;
 }
 
 .activeTitle {
@@ -113,6 +121,7 @@
 
   width: 100%;
   padding: 1rem 0;
+
   position: absolute;
   right: 0;
   transition: transform 0.5s linear;
@@ -159,6 +168,7 @@ ion-icon {
   height: 100%;
   border-bottom-right-radius: 20px;
   background-color: #13a04c;
+  background-color: #E2E2E6;
 }
 
 .b:nth-child(2) {
@@ -178,4 +188,5 @@ ion-icon {
   height: 100%;
   border-top-right-radius: 20px;
   background-color: #13a04c;
+  background-color: #E2E2E6;
 }
