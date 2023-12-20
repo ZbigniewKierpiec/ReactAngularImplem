@@ -15,10 +15,18 @@ export default function Header() {
     return () => clearInterval(intervalId);
   }, []); // Empty dependency array to run the effect only once on mount
   const formattedTime = currentTime.toLocaleTimeString([], {
+
+
     hour12: true,
     hour: "2-digit",
     minute: "2-digit",
   });
+
+  
+  if (formattedTime.startsWith("00")) {
+    // Replace "00" with "12"
+    formattedTime = formattedTime.replace(/^00/, "12");
+  }
 
   const formattedDate = currentDate.toLocaleDateString('en-GB', {
     weekday:'long',

@@ -34,7 +34,7 @@
     line-height: 1.6;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch; /* Enables momentum scrolling in iOS */
-
+    overflow: hidden;
   }
   
   label {

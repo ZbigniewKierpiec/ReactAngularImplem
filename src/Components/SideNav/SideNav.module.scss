@@ -1,3 +1,5 @@
+@import '../src/index.scss';
+
 .navigation {
   position: fixed;
 
@@ -124,16 +126,15 @@
 // --------------------------------------------
 
 .burger {
-
   font-size: 4rem;
-  
-   min-width: 100%;
+
+  min-width: 100%;
   // background-color: yellow;
   width: 100%;
-  height: 5.4rem;
+  height: 5.8rem;
   // padding: .6rem 0;
   position: relative;
-  
+
   // position: absolute;
   // right: 0;
   transition: transform 0.5s linear;
@@ -145,17 +146,22 @@
   font-weight: bolder;
   z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
 }
-.burger ion-icon{
+.burger ion-icon {
   font-size: 4rem;
- margin-right: 1rem;
+  margin-right: 1rem;
+
 }
 .activeBurger {
   display: flex;
   justify-content: center;
   align-items: center;
   transform: translateX(70px);
-
+  transform: translateX(7rem);
+ 
   transition: transform 0.5s linear;
+  @include respond(i-pad){
+    transform: translateX(9rem);
+}
 }
 
 //        Slider  &   Border top right bottom right of slider
