@@ -65,16 +65,21 @@ export default function SideNav() {
   return (
     <>
       <div className={`${styles.navigation} ${active ? styles.activeNav : ""}`}>
-        <div
+      
+        <ul className={styles.ul}>
+            {/* <div className="burger">
+        <ion-icon name="menu-outline"></ion-icon>
+        </div>   */}
+ 
+         <div
           onClick={handleActiveBurger}
           className={`${styles.burger} ${active ? styles.activeBurger : ""}`}
         >
-          <ion-icon name="menu-outline"></ion-icon>
-        </div>
-        <ul className={styles.ul}>
-          {/* <div className="burger">
-        <ion-icon name="menu-outline"></ion-icon>
-        </div> */}
+          <ion-icon  name="menu-outline"></ion-icon>
+        </div> 
+
+
+
           <li
             style={{ transform: `translateY(${position * 100}%)` }}
             className={styles.slide}
@@ -105,7 +110,7 @@ export default function SideNav() {
                   className={`${styles.title} ${
                     active
                       ? `${styles.active} animate__animated animate__fadeInDown animate__slow  animate__delay-1s	 `
-                      : "animate__animated animate__fadeOut"
+                      : "animate__animated animate__fadeOutRight  animate__faster"
                   }`}
                 >
                   {data.name}

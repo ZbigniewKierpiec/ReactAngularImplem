@@ -4,49 +4,62 @@
   top: 0px;
   top: 150px;
   top: 140px;
+  top: 158px;
+  top: 14rem;
   //   left: 20px;
-  bottom: 20px;
-  bottom: 100px;
+  // bottom: 20px;
+  // bottom: 100px;
+
   width: 300px;
   width: 70px;
-  height: 800px;
-  border-top-right-radius: 20px;
+
+  // height: 800px;
+  // height: 75vh;
+  // height: 64rem;
+
+  height: 85rem;
+  // border-top-right-radius: 20px;
+  border-top-right-radius: 1rem;
   border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 1rem;
   box-sizing: initial;
+
   border-left: 5px solid #13a04c;
-  border-left: 5px solid #E2E2E6;
+  border-left: 5px solid #e2e2e6;
   background-color: #4d5bf9;
   background: #13a04c;
-  background-color:#E2E2E6 ;
+  background-color: #e2e2e6;
   transition: width 0.5s linear;
-  font-size: 2rem;
+  // font-size: 2rem;
   overflow: hidden;
 }
 
 .ul {
-  position: absolute;
-  top: 10px;
-  top: 20px;
- 
+  // position: absolute;
+  // top: 10px;
+  // top: 20px;
+  // top: 1.8rem;
+
   // left: 16px;
   width: 100%;
   padding-left: 5px;
-  padding-top: 40px;
+  // padding-top: 40px;
+
   z-index: -1;
 }
 
 .li {
-  position: relative;
-  list-style: none;
-  width: 100%;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  transition: transform 0.3s ease;
+  // position: relative;
+  // list-style: none;
+  // width: 100%;
+  // border-top-left-radius: 15px;
+  // border-bottom-left-radius: 15px;
+  // transition: transform 0.3s ease;
 }
 
 .a {
-  position: relative;
-  display: block;
+  // position: relative;
+  // display: block;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -54,94 +67,49 @@
   color: #fff;
   overflow: hidden !important;
 }
-.activeA {
-  // text-align: right;
-  // justify-content: space-between;
-}
 
 .icon {
   position: relative;
+  // background-color: yellow;
   display: block;
-  min-width: 60px;
   height: 60px;
-  line-height: 75px;
+
+  min-width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // line-height: 75px;
+
   text-align: center;
   overflow: hidden !important;
 }
 
 .icon ion-icon {
-  font-size: 1.5em;
+  // font-size: 1.5em;
+  font-size: 2.5rem;
   color: black;
 }
 
 .title {
   position: relative;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   display: block;
-  padding-left: 10px;
-  height: 60px;
-
   line-height: 60px;
+  // padding-left: 10px;
+  height: 60px;
+  //  display: flex;
+  //  justify-content: flex-end;
+  //  align-items: center;
+
   color: black;
   white-space: normal;
   text-transform: capitalize;
   font-size: 1.7rem;
   overflow: hidden !important;
   // margin-left: 120px;
-  margin-right: 2rem;
-}
-
-.activeTitle {
-}
-.active .a {
-  transition: 0.9s linear;
-  color: black;
-}
-
-.active {
-}
-
-.slide {
-  width: 100%;
-  position: absolute;
-  top: 40px;
-  left: 0;
-  background-color: white;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  //   z-index: 9999999999999999 !important;
-
-  transition: 0.4s linear;
-}
-
-.burger {
-  font-size: 4rem;
-  //  min-width: 100%;
-
-  width: 100%;
-  padding: 1rem 0;
-
-  position: absolute;
-  right: 0;
-  transition: transform 0.5s linear;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transform: translateX(0px);
-  font-weight: bolder;
-}
-.activeBurger {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(70px);
-
-  transition: transform 0.5s linear;
-}
-ion-icon {
-  cursor: pointer !important;
+  margin-right: 2.1rem;
 }
 
 .activeNav {
@@ -151,9 +119,69 @@ ion-icon {
   transition: width 0.5s linear;
 }
 
+//  Burger menu
+
+// --------------------------------------------
+
+.burger {
+
+  font-size: 4rem;
+  
+   min-width: 100%;
+  // background-color: yellow;
+  width: 100%;
+  height: 5.4rem;
+  // padding: .6rem 0;
+  position: relative;
+  
+  // position: absolute;
+  // right: 0;
+  transition: transform 0.5s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: translateX(0px);
+  font-weight: bolder;
+  z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
+}
+.burger ion-icon{
+  font-size: 4rem;
+ margin-right: 1rem;
+}
+.activeBurger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(70px);
+
+  transition: transform 0.5s linear;
+}
+
+//        Slider  &   Border top right bottom right of slider
+// ---------------------------------------------------------------------------------
+
+.slide {
+  width: 100%;
+  position: absolute;
+  // top: 40px;
+  left: 0;
+  background-color: white;
+  // border-top-left-radius: 15px 130px;
+
+  // border-bottom-left-radius: 15px 130px;
+  border-radius: 200px 10px 10px 200px;
+  -moz-border-radius: 200px 10px 10px 200px;
+  -webkit-border-radius: 200px 10px 10px 200px;
+  border: 0px none #000000;
+  //   z-index: 9999999999999999 !important;
+
+  transition: 0.4s linear;
+}
 .b:nth-child(1) {
   position: absolute;
   top: -20px;
+  top: -15px;
   height: 20px;
 
   width: 100%;
@@ -170,12 +198,13 @@ ion-icon {
   border-bottom-right-radius: 20px;
 
   background-color: #13a04c;
-  background-color: #E2E2E6;
+  background-color: #e2e2e6;
 }
 
 .b:nth-child(2) {
   position: absolute;
   bottom: -20px;
+  bottom: -15px;
   height: 20px;
   width: 100%;
   background-color: white;
@@ -190,5 +219,5 @@ ion-icon {
   height: 100%;
   border-top-right-radius: 20px;
   background-color: #13a04c;
-  background-color: #E2E2E6;
+  background-color: #e2e2e6;
 }

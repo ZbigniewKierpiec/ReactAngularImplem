@@ -1,4 +1,5 @@
 import styles from "./App.module.scss";
+import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 
 import SideNav from "./Components/SideNav/SideNav";
@@ -8,6 +9,7 @@ function App() {
     <div className={styles.container}>
       <Header />
       <SideNav />
+      <Footer/>
     </div>
   );
 }
