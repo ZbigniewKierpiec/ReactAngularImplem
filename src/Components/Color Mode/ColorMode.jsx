@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import styles from "./ColorMode.module.scss";
 import ColorSlider from "./ColorSlider";
-
-export default function ColorMode() {
+import "animate.css";
+// eslint-disable-next-line no-unused-vars
+export default function ColorMode({ palette }) {
   const [checked, setChecked] = useState(true);
 
   const handleCheckboxChange = () => {
@@ -10,7 +12,13 @@ export default function ColorMode() {
   };
 
   return (
-    <div className={`${styles.box} ${checked ? styles.active : ""}`}>
+    <div
+      className={`${styles.box} ${checked ? styles.active : ""}  ${
+        palette
+          ? "animate__animated animate__fadeInRight"
+          : "animate__animated animate__fadeOut"
+      }     `}
+    >
       <div className={styles.left}>
         <div></div>
         <div></div>

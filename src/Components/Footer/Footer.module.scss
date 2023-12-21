@@ -73,6 +73,9 @@ span:nth-child(4) {
   display: flex;
   justify-content: center;
   align-items: center;
+  &:active{
+    background-color: #909cad;
+  }
  
 }
 
