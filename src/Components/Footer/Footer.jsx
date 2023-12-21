@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.scss";
 import VolumeSlider from "../Volume Slider/VolumeSlider";
+import ColorMode from "../Color Mode/ColorMode";
 export default function Footer() {
   return <footer className={styles.footer}>
 <div className={styles.volume}>
@@ -14,5 +15,6 @@ export default function Footer() {
    <span className={styles.color}>
    <ion-icon name="color-palette-outline"></ion-icon>
    </span>
+   <ColorMode/>
   </footer>;
 }

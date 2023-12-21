@@ -1,3 +1,4 @@
+/* eslint-disable no-const-assign */
 import React, { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 export default function Header() {
@@ -14,7 +15,7 @@ export default function Header() {
     // Cleanup the interval on component unmount
     return () => clearInterval(intervalId);
   }, []); // Empty dependency array to run the effect only once on mount
-  const formattedTime = currentTime.toLocaleTimeString([], {
+  let formattedTime = currentTime.toLocaleTimeString([], {
 
 
     hour12: true,
