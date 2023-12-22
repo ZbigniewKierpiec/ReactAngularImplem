@@ -8,19 +8,14 @@
   top: 140px;
   top: 158px;
   top: 14rem;
-  //   left: 20px;
-  // bottom: 20px;
-  // bottom: 100px;
+ 
 
   width: 300px;
   width: 70px;
 
-  // height: 800px;
-  // height: 75vh;
-  // height: 64rem;
 
   height: 85rem;
-  // border-top-right-radius: 20px;
+ 
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 20px;
   border-bottom-right-radius: 1rem;
@@ -44,38 +39,23 @@
 }
 
 .ul {
-  // position: absolute;
-  // top: 10px;
-  // top: 20px;
-  // top: 1.8rem;
+ 
 
-  // left: 16px;
   width: 100%;
   padding-left: 5px;
-  // padding-top: 40px;
+ 
 
   z-index: -1;
 
 
-
-&.darkmode{
-  // border-color:#333538 !important;
-}
   
 }
 
 .li {
-  // position: relative;
-  // list-style: none;
-  // width: 100%;
-  // border-top-left-radius: 15px;
-  // border-bottom-left-radius: 15px;
-  // // transition: transform 0.3s ease;
-  // border: 1px red !important;
+ 
 
  &.darkmode{
-  // background:#333538 !important;
-  // border-color:#333538 !important;
+ 
   background-color: #1A1C1E !important;
   background:#333538 !important;
   color: white;
@@ -84,7 +64,7 @@
 }
 
 .a {
-  // position: relative;
+ 
   
   
   width: 100%;
@@ -94,18 +74,11 @@
   color: #fff;
 
   
-  &.darkmode{
-//     background:#333538 !important;
-//     border-color:#333538 !important;
-//  border-top-left-radius: 15px 130px;
-  
-//   border-bottom-left-radius: 15px 130px;
-  }
 }
 
 .icon {
   position: relative;
-  // background-color: yellow;
+ 
   display: block;
   height: 60px;
   
@@ -114,14 +87,13 @@
   justify-content: center;
   align-items: center;
 
-  // line-height: 75px;
 
   text-align: center;
 
 }
 
 .icon ion-icon {
-  // font-size: 1.5em;
+ 
   font-size: 2.5rem;
   color: black;
   .darkmode{color:white}
@@ -139,22 +111,20 @@
   font-weight: 300;
   display: block;
   line-height: 60px;
-  // padding-left: 10px;
+
   height: 60px;
-  //  display: flex;
-  //  justify-content: flex-end;
-  //  align-items: center;
+ 
 
   color: black;
   white-space: normal;
   text-transform: capitalize;
   font-size: 1.7rem;
   overflow:  hidden !important;
-  // margin-left: 120px;
+ 
   margin-right: 2.1rem;
   &.darkmode{
     color:white !important;
-    // background:#333538 !important;
+   
   
   }
 }
@@ -174,14 +144,12 @@
   font-size: 4rem;
 
   min-width: 100%;
-  // background-color: yellow;
+ 
   width: 100%;
   height: 5.8rem;
-  // padding: .6rem 0;
+ 
   position: relative;
-    // background:red;
-  // position: absolute;
-  // right: 0;
+  
   transition: transform 0.2s linear;
   display: flex;
   justify-content: center;
@@ -227,24 +195,21 @@
   width: 100%;
   position: absolute;
 
-  // top: 40px;
   left: 0;
   background-color: white;
-  // border-top-left-radius: 15px 130px;
-
-  // border-bottom-left-radius: 15px 130px;
+ 
   border-radius: 200px 10px 10px 200px;
   -moz-border-radius: 200px 10px 10px 200px;
   -webkit-border-radius: 200px 10px 10px 200px;
   border: 0px none #000000;
-    // z-index: 9999999999999999 !important;
+  
 
   transition:transform 0.3s linear;
   &.darkmode{
   
     background-color: #1A1C1E !important;
 background-color:#1A1C1E !important ;
-// background-color:yellow!important ;
+
     color:white !important;
     
   }
@@ -265,11 +230,7 @@ background-color:#1A1C1E !important ;
     color:white !important;
     z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
   }
-  // .darkmode{
-  //   // background-color: #1A1C1E !important;
-
-  //   color:white !important;
-  // }
+ 
 }
 
 .b:nth-child(1)::before {
@@ -279,11 +240,9 @@ background-color:#1A1C1E !important ;
   left: 0;
   width: 100%;
   height: 100%;
-  // border: 1px solid red;
+ 
   border-bottom-right-radius: 20px;
 
-  // background-color: #13a04c;
-  // background-color: #e2e2e6;
   background-color: #e2e2e6;
   
 
@@ -304,11 +263,6 @@ background-color:#1A1C1E !important ;
 }
 
 
-// .darkmode{
-//   // background-color: #1A1C1E !important;
-//   background:#333538 !important;
-//   color:white !important;
-// }
 
 .b:nth-child(2)::before {
   content: '';
