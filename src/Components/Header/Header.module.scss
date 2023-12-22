@@ -9,8 +9,11 @@
   align-items: center;
 
   background-color: #fdfcff;
-
-
+  transition: .2s linear;
+&.darkmode{
+  background:#1A1C1E !important;
+  color: white !important;
+}
 }
 
 .left {

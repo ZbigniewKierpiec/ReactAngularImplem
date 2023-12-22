@@ -11,6 +11,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  &.darkmode{
+    background:#1A1C1E !important;
+  }
 }
 
 .volume {
@@ -76,10 +79,47 @@ span:nth-child(4) {
   &:active{
     background-color: #909cad;
   }
- 
+ &.darkmode{
+  background-color:#BBC7DB !important;
+ }
 }
 
 .color ion-icon{
   font-size: 4rem;
   color: white;
+}
+
+
+.footer span:nth-child(1).darkmode {
+  background-color:#BBC7DB;
+ 
+}
+
+.footer span:nth-child(1).darkmode ion-icon{
+  color: black;
+}
+
+
+
+.footer span:nth-child(2).darkmode {
+  background-color:#9FCAFF;
+ 
+}
+
+
+.footer span:nth-child(2).darkmode ion-icon{
+  color: black;
+}
+
+
+
+
+.footer span:nth-child(4).darkmode {
+  background-color:#9FCAFF;
+ 
+}
+
+
+.footer span:nth-child(4).darkmode ion-icon{
+  color: black;
 }
