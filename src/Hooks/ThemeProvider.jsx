@@ -14,7 +14,13 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+
   const bodyRef = useRef(document.body);
+
+
+
+
+
 
   const toggleMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -23,6 +29,7 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     const body = bodyRef.current;
     body.className = isDarkMode ? 'dark-mode' : 'light-mode';
+
   }, [isDarkMode]);
 
   const theme = {

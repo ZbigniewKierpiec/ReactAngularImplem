@@ -28,10 +28,13 @@
     width: 6.5rem;
     height: 6.5rem;
     border-radius: 50%;
+    cursor: pointer;
   }
 }
 .left div:nth-child(1) {
   background-color: #ff77d5;
+
+  cursor: pointer;
 }
 .left div:nth-child(2) {
   background-color: #669b00;

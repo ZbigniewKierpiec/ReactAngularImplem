@@ -5,16 +5,24 @@ import Header from "./Components/Header/Header";
 
 import SideNav from "./Components/SideNav/SideNav";
 import { ThemeProvider } from "./Hooks/ThemeProvider";
+import { ClickedThemeProvider } from "./Hooks/ClickedThemeProvider";
 
 function App() {
   return (
     <div className={styles.container}>
-      <ThemeProvider>
+       <ThemeProvider>
+
+
+
+        <ClickedThemeProvider>
+
+ 
         <Header />
         <SideNav />
 
         <Footer />
-      </ThemeProvider>
+        </ClickedThemeProvider>
+        </ThemeProvider>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 /* eslint-disable no-const-assign */
 import React, { useEffect, useState } from "react";
 import { useTheme } from './../../Hooks/ThemeProvider';
+import { useThemes } from "../../Hooks/ClickedThemeProvider";
 import styles from "./Header.module.scss";
 export default function Header() {
 
@@ -8,6 +9,7 @@ export default function Header() {
 
   const [currentDate, setCurrentDate] = useState(new Date());
   const { isDarkMode, toggleMode } = useTheme();
+  const { themeStyles, handleThemeChange } = useThemes();
   const time = 10000;
   useEffect(() => {
     // Update the current time every minute (60,000 milliseconds)
@@ -41,7 +43,7 @@ export default function Header() {
   });
 
   return (
-    <header className={`${styles.header} ${isDarkMode ? styles.darkmode:''}`}>
+    <header  style={{ backgroundColor: themeStyles.backgroundColor, color: themeStyles.textColor }}            className={`${styles.header} ${isDarkMode ? styles.darkmode:''}`}>
       <div className={styles.left}>
         <div className={styles.top}>
           <time className={styles.time} dateTime={currentTime.toISOString()}>

@@ -4,17 +4,32 @@ import styles from "./ColorMode.module.scss";
 import ColorSlider from "./ColorSlider";
 import "animate.css";
 import { useTheme } from "../../Hooks/ThemeProvider";
+import { useThemes } from "../../Hooks/ClickedThemeProvider";
 // eslint-disable-next-line no-unused-vars
 export default function ColorMode({ palette }) {
   const [checked, setChecked] = useState(true);
 
   // const [isDarkMode, setIsDarkMode] = useState(false);
   const { isDarkMode, toggleMode } = useTheme();
+  const {  handleThemeChange } = useThemes();
   const handleCheckboxChange = () => {
     setChecked(!checked);
     // setIsDarkMode(!isDarkMode);
            toggleMode();
   };
+
+  const handleLightThemeClick = () => {
+    handleThemeChange('light');
+  };
+
+  const handleDarkThemeClick = () => {
+    handleThemeChange('dark');
+  };
+
+    const  handleBlueThemeClick = ()=>{
+      handleThemeChange('blue');
+    }
+
 
 
   return (
@@ -26,9 +41,9 @@ export default function ColorMode({ palette }) {
       }     `}
     >
       <div className={styles.left}>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div onClick={handleLightThemeClick}  ></div>
+        <div onClick={handleDarkThemeClick}   ></div>
+        <div onClick={handleBlueThemeClick}    ></div>
       </div>
       <div className={styles.right}>
         <div className={`${styles.sun}  ${isDarkMode ? styles.darkmode :''}  `}>
