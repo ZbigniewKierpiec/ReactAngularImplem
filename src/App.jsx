@@ -4,14 +4,17 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 
 import SideNav from "./Components/SideNav/SideNav";
+import { ThemeProvider } from "./Hooks/ThemeProvider";
 
 function App() {
   return (
     <div className={styles.container}>
-      <Header />
-      <SideNav />
-   
-      <Footer/>
+      <ThemeProvider>
+        <Header />
+        <SideNav />
+
+        <Footer />
+      </ThemeProvider>
     </div>
   );
 }

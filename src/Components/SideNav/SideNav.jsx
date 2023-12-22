@@ -2,6 +2,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import styles from "./SideNav.module.scss";
 import "animate.css";
+import { useTheme } from './../../Hooks/ThemeProvider';
 
 const links = [
   {
@@ -51,6 +52,7 @@ export default function SideNav() {
   const [activeItem, setActiveItem] = useState("home"); // Set the default active item
   const [position, setPosition] = useState(null);
   const [active, setActive] = useState(false);
+  const { isDarkMode, toggleMode } = useTheme();
   function handleItemClick(item, index) {
     console.log(item);
     setActiveItem(items[index].name);
@@ -64,29 +66,28 @@ export default function SideNav() {
 
   return (
     <>
-      <div className={`${styles.navigation} ${active ? styles.activeNav : ""}`}>
+      <div className={`${styles.navigation} ${active ? styles.activeNav : ""}   ${isDarkMode ? styles.darkmode :''}`}>
       
-        <ul className={styles.ul}>
+        <ul className={`${styles.ul}`}>
             {/* <div className="burger">
         <ion-icon name="menu-outline"></ion-icon>
         </div>   */}
  
          <div
           onClick={handleActiveBurger}
-          className={`${styles.burger} ${active ? styles.activeBurger : ""}`}
+          className={`${styles.burger} ${active ? styles.activeBurger : ""} ${isDarkMode ?styles.darkmode:''}   `}
         >
           <ion-icon  name="menu-outline"></ion-icon>
         </div> 
-
-
-
+           
+              
           <li
             style={{ transform: `translateY(${position * 100}%)` }}
-            className={styles.slide}
+            className={`${styles.slide} ${isDarkMode ? styles.darkmode :''}`}
           >
-            <b className={styles.b}></b>
-            <b className={styles.b}></b>
-            <a className={styles.a} href="#">
+            <b className={`${styles.b} ${isDarkMode ? styles.darkmode :''} `}></b>
+            <b className={`${styles.b}  ${isDarkMode ? styles.darkmode :''}  `}></b>
+            <a className={`${styles.a}  ${isDarkMode ? styles.darkmode :''}   `} href="#">
               <span className={styles.icon}>
                 {/* <ion-icon name="home-outline"></ion-icon> */}
               </span>
@@ -97,17 +98,17 @@ export default function SideNav() {
           {items.map((data, index) => (
             <li
               onClick={() => handleItemClick(data.name, index)}
-              className={`${styles.li} ${
+              className={`${styles.li} ${isDarkMode ? styles.darkmode :''}     ${
                 activeItem === data.name ? styles.active : ""
               }`}
               key={data.id}
             >
               <a className={styles.a} href="#">
-                <span className={styles.icon}>
+                <span className={`${styles.icon} ${isDarkMode ? styles.darkmode:''}  `}>
                   <ion-icon name={data.icon}></ion-icon>
                 </span>
                 <span
-                  className={`${styles.title} ${
+                  className={`${styles.title} ${isDarkMode ? styles.darkmode :''}   ${
                     active
                       ? `${styles.active} animate__animated animate__fadeInDown animate__slow  animate__delay-1s	 `
                       : "animate__animated animate__fadeOutRight  animate__faster"
