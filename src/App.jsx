@@ -8,7 +8,7 @@ import { ThemeProvider } from "./Hooks/ThemeProvider";
 import { ClickedThemeProvider } from "./Hooks/ClickedThemeProvider";
 import Main from "./Components/Main/Main";
 import { useState } from "react";
-import Home from "./Components/Home/Home";
+
 import { ItemProvider } from "./Hooks/ItemProvider";
 
 function App() {
