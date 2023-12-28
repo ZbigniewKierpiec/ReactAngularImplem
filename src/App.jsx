@@ -6,23 +6,37 @@ import Header from "./Components/Header/Header";
 import SideNav from "./Components/SideNav/SideNav";
 import { ThemeProvider } from "./Hooks/ThemeProvider";
 import { ClickedThemeProvider } from "./Hooks/ClickedThemeProvider";
+import Main from "./Components/Main/Main";
+import { useState } from "react";
+import Home from "./Components/Home/Home";
+import { ItemProvider } from "./Hooks/ItemProvider";
 
 function App() {
+  const [active, setActive] = useState(false);
+  const [clickedItem, setClickedItem] = useState("");
+
+  const handleItemClick = (itemName) => {
+    setClickedItem(itemName);
+  };
+
   return (
     <div className={styles.container}>
-       <ThemeProvider>
-
-
-
+      <ThemeProvider>
         <ClickedThemeProvider>
+          <ItemProvider>
+            <Header />
+            <SideNav
+              active={active}
+              setActive={setActive}
+              onItemClick={handleItemClick}
+            />
 
- 
-        <Header />
-        <SideNav />
+            <Main clickedItem={clickedItem} active={active} />
 
-        <Footer />
+            <Footer />
+          </ItemProvider>
         </ClickedThemeProvider>
-        </ThemeProvider>
+      </ThemeProvider>
     </div>
   );
 }

@@ -1,13 +1,14 @@
 .box {
-  position: absolute;
+  position: absolute !important;
   width: 17rem;
   height: 22rem;
   background-color: #e2e2e6;
   // background-color: yellow;
   background-color: #e2e2e6;
   background-color: #333538;
-  position: absolute;
+
   bottom: 9rem;
+
   border-radius: 4rem;
   right: 0;
   margin-right: 4rem;
@@ -15,6 +16,7 @@
   grid-template-columns: 6.5rem 1fr;
   grid-template-rows: 1fr;
   transition: background 0.2s linear;
+  z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
 }
 
 .left {

@@ -1,14 +1,16 @@
 .header {
   width: 100%;
   height: 140px;
-  height: 15vh;
-  height: 14rem;
+  height: 15.9vh;
+  // height: 14rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background-color: #fdfcff;
+  background-color: #625a72;
+  background-color: #fdfcff ;
+  // background-color: #625a72;
   transition: .2s linear;
 &.darkmode{
   background:#1A1C1E !important;
