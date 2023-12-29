@@ -44,7 +44,7 @@ const reducer = (state, action) => {
 
     default:
       // If no specific case matches, return the default home component
-      return { component: <Home /> };
+      return { component: <Display /> };
   }
 };
 export default function Main({ active }) {

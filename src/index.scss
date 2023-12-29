@@ -32,8 +32,10 @@ body {
   line-height: 1.6;
   overflow-y: scroll;
   transition: background 0.2s linear;
+  -webkit-tap-highlight-color: transparent !important;
   -webkit-overflow-scrolling: touch; /* Enables momentum scrolling in iOS */
   overflow: hidden;
+  overscroll-behavior: none;
   &.light-mode {
     background-color: white;
   }

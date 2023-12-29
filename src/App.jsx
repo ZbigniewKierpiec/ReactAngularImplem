@@ -1,5 +1,5 @@
 import styles from "./App.module.scss";
-import ColorMode from "./Components/Color Mode/ColorMode";
+
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 
