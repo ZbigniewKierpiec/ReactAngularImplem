@@ -5,8 +5,9 @@ import { useItemContext } from "../../Hooks/ItemProvider";
 import Panel from "./Panel/Panel";
 const panels = [
   {
-    id:1,
+    id: 1,
     name: "samsung tv",
+    ledInform: "",
     btn1: "off",
     btn2: "on",
     btn3: "input",
@@ -15,8 +16,9 @@ const panels = [
     btn6: "volume-high-outline",
   },
   {
-    id:2,
+    id: 2,
     name: "sony wf-tx1000",
+    ledInform: "warning-outline",
     btn1: "off",
     btn2: "on",
     btn3: "input",
@@ -25,8 +27,9 @@ const panels = [
     btn6: "volume-high-outline",
   },
   {
-    id:3,
+    id: 3,
     name: "panasonic tr-100",
+    ledInform: "",
     btn1: "off",
     btn2: "on",
     btn3: "input",
@@ -35,8 +38,9 @@ const panels = [
     btn6: "volume-high-outline",
   },
   {
-    id:4,
+    id: 4,
     name: "philips hu12",
+    ledInform: "",
     btn1: "off",
     btn2: "on",
     btn3: "input",
@@ -45,8 +49,9 @@ const panels = [
     btn6: "volume-high-outline",
   },
   {
-    id:5,
+    id: 5,
     name: "wibble",
+    ledInform: "",
     btn1: "off",
     btn2: "on",
     btn3: "input",
@@ -70,7 +75,9 @@ export default function Display() {
               <p>displays</p>
             </div>
             <div className={styles.scroll}>
-             {panels.map((data)=>  <Panel key={data.id} data={data}  />  )}
+              {panels.map((data) => (
+                <Panel key={data.id} data={data} />
+              ))}
             </div>
           </div>
           <div className={styles.topRight}></div>

@@ -5,10 +5,10 @@ export default function Panel({data}) {
   return (
     <section className={styles.section}>
     <div className={styles.name}>
-    <p>{data.name}</p>
+    <span>{data.name}  <ion-icon name={data.ledInform}></ion-icon>  </span> 
     </div>
     <div className={styles.box}>
-      <span>{data.btn1}</span>
+      <span>{data.btn1}</span> 
       <span>{data.btn2}</span>
       <span>{data.btn3}</span>
       <span><ion-icon name={data.btn4}></ion-icon></span>
