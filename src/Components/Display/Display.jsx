@@ -3,6 +3,7 @@ import styles from "./Display.module.scss";
 import "animate.css";
 import { useItemContext } from "../../Hooks/ItemProvider";
 import Panel from "./Panel/Panel";
+import Numbers from "./Numbers/Numbers";
 const panels = [
   {
     id: 1,
@@ -75,12 +76,40 @@ export default function Display() {
               <p>displays</p>
             </div>
             <div className={styles.scroll}>
-              {panels.map((data) => (
-                <Panel key={data.id} data={data} />
-              ))}
+            {panels.map((data) => (
+              <Panel key={data.id} data={data} />
+            ))}
             </div>
           </div>
-          <div className={styles.topRight}></div>
+          <div className={styles.topRight}>
+          <div className={styles.topRightName}>
+          <span>on</span>
+          <span>off</span>
+       </div>
+       <div className={styles.topRightBox}>
+          <div className={styles.one}>
+              <Numbers/>
+          </div>
+
+          <div className={styles.dotsOne}>
+          <span></span>
+          <span></span>
+          </div>
+          <div className={styles.two}>
+          <Numbers/>
+          </div>
+          <div className={styles.three}>
+          <Numbers/>
+          </div>
+          <div className={styles.dotsTwo}>
+          <span></span>
+          <span></span>
+          </div>
+          <div className={styles.four}>
+          <Numbers/>
+          </div>
+       </div>
+          </div>
         </div>
         <div className={styles.bottom}></div>
       </div>

@@ -9,8 +9,13 @@
 
 .name {
   font-size: 1.7rem;
+  font-size: 1rem;
   text-transform: capitalize;
   color: black;
+
+ span{
+  font-size: 1.7rem !important;
+ }
 
   ion-icon {
     animation: flash 1.5s linear infinite;
@@ -28,7 +33,9 @@
   span {
     display: block;
     width: 6rem;
-    height: 100%;
+    
+    // height: 100%;
+    height: 6rem;
     background-color: #eeedf1;
     display: flex;
     justify-content: center;
@@ -38,12 +45,16 @@
     font-weight: 400;
     color: black;
     border-radius: 0.5rem;
+    // font-size: 5rem !important;
   }
+  ion-icon {
+    font-size: 3rem;
+  }
+
+
 }
-
-
-ion-icon {
-  font-size: 2rem;
+ion-icon{
+  
 }
 @keyframes flash {
   0% {
