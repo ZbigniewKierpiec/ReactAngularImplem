@@ -6,9 +6,9 @@ export default function ColorSlider({handleCheckboxChange , checked}) {
 
   return (
     <>
-      <input   checked={checked}
+      <input className={styles.input}   checked={checked}
         onChange={handleCheckboxChange} type="checkbox" id="toggle-slider" />
-      <label htmlFor="toggle-slider">On/Off</label>
+      <label className={styles.label} htmlFor="toggle-slider">On/Off</label>
     </>
   );
 }

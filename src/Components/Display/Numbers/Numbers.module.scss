@@ -7,8 +7,9 @@
   justify-content: space-between;
   align-items: center;
 padding-bottom: 4rem;
-
+-webkit-tap-highlight-color: transparent !important;
 }
+
   ion-icon {
     font-size: 7rem;
     cursor: pointer;
@@ -19,6 +20,7 @@ padding-bottom: 4rem;
     display: inline-block;
     outline: none !important; /* Remove the default outline */
     -webkit-tap-highlight-color: transparent;
+   
     
      &:focus{
         outline: none !important;

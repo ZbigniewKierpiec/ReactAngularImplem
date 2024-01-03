@@ -20,7 +20,9 @@
   font-family: monospace;
   -webkit-tap-highlight-color: transparent;
 }
-
+::selection{
+  background-color: transparent !important;
+}
 html {
   font-size: 62.5%;
   box-sizing: border-box;
