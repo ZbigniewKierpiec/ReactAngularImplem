@@ -44,14 +44,14 @@ const reducer = (state, action) => {
 
     default:
       // If no specific case matches, return the default home component
-      return { component: <Display /> };
+      return { component: <Lighting /> };
   }
 };
 export default function Main({ active }) {
   const { clickedItem } = useItemContext();
   console.log(clickedItem);
   // Use useReducer hook with an initial state of the Home component
-  const [state, dispatch] = useReducer(reducer, { component: <Home /> });
+  const [state, dispatch] = useReducer(reducer, { component: <FlipTops /> });
 
   // Dispatch an action based on the clickedItem
   React.useEffect(() => {
