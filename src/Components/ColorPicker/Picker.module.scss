@@ -1,0 +1,66 @@
+.box {
+  width: 100%;
+  height: 100%;
+  grid-row: 4 / span 6;
+  grid-column: 4 / span 6;
+ 
+}
+
+.customcolorpicker {
+  width: 100px;
+  height: 200px;
+  // background-color: red;
+   position: absolute;
+  cursor: pointer;
+  z-index: 100000000000000000000000000000000000000000000000000000000000000000000000000000 !important;
+  /* Add any other styles you need */
+  &::after {
+    content: "\f0eb";
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background:#E2E2E6;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+border-radius:50%;
+    color: white; 
+    font-size: 9rem; 
+    text-align: center;
+    line-height: 100px; 
+    box-shadow: -2px 2px 19px -3px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: -2px 2px 19px -3px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: -2px 2px 19px -3px rgba(0, 0, 0, 0.75);
+      color: inherit;
+      color:inherit;
+   
+
+    ion-icon{
+        color: white !important;
+        z-index: 5555555555555555555555;
+        font-size: 23px;
+    }
+
+
+  }
+}
+  
+
+.test{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  width: 300px;
+  height: 300px;
+  background-color: green;
+  z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}

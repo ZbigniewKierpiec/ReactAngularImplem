@@ -4,8 +4,13 @@ import styles from "./Lighting.module.scss";
 
 import Themes from "./Themes/Themes";
 import ThemesAdd from "./Themes/ThemesAdd";
-import RadialColor from "./RadialColor/RadialColor";
+import Picker from "../ColorPicker/Picker";
 import Clock from "../Clock/Clock";
+import RadialColor from "./RadialColor/RadialColor";
+
+
+
+
 const Data = [
   {
     id: 1,
@@ -102,7 +107,16 @@ export default function Lighting() {
   const [progress, setProgress] = useState(0);
   const [love, setId] = useState("");
   const [items, setItems] = useState(Data);
+  const [color, setColor] = React.useState({
+    hue: 200,
+    saturation: 100,
+    luminosity: 50,
+    alpha: 1
+});
 
+const onInput = (hue) => {
+    setColor({ ...color, hue });
+};
   let active = true;
   const deleteTimer = 1300;
   function handleClickDelete(id) {
@@ -143,7 +157,7 @@ export default function Lighting() {
                 ></div>
                 <span>{data.name}</span>
               </div>
-
+             
               <div
                 onClick={() => handleClickDelete(data.id)}
                 className={styles.icon}
@@ -155,7 +169,10 @@ export default function Lighting() {
         </div>
 
         <div className={styles.topRight}>
-          <RadialColor />
+{/*              
+              <Picker/> */}
+            <RadialColor/>
+            
         </div>
       </div>
     </div>
