@@ -163,7 +163,7 @@ const onInput = (hue) => {
                 className={styles.icon}
               >
                 <ion-icon name="trash-outline"></ion-icon>
-                <p>zee</p>
+                <h1>welcome</h1>
               </div>
             </div>
           ))}
