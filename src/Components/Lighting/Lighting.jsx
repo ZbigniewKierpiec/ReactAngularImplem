@@ -169,9 +169,9 @@ const onInput = (hue) => {
         </div>
 
         <div className={styles.topRight}>
-{/*              
-              <Picker/> */}
-            <RadialColor/>
+             
+              {/* <Picker/> */}
+            {/* <RadialColor/> */}
             
         </div>
       </div>
