@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useItemContext } from "../../Hooks/ItemProvider";
 import styles from "./Lighting.module.scss";
-
+import Saturday from "../Saturday/Saturday";
 import Themes from "./Themes/Themes";
 import ThemesAdd from "./Themes/ThemesAdd";
 import Picker from "../ColorPicker/Picker";
 import Clock from "../Clock/Clock";
 import RadialColor from "./RadialColor/RadialColor";
+
 
 
 
@@ -163,7 +164,7 @@ const onInput = (hue) => {
                 className={styles.icon}
               >
                 <ion-icon name="trash-outline"></ion-icon>
-                <h1>welcome</h1>
+            
               </div>
             </div>
           ))}
@@ -172,7 +173,8 @@ const onInput = (hue) => {
         <div className={styles.topRight}>
 {/*              
               <Picker/> */}
-            <RadialColor/>
+            {/* <RadialColor/> */}
+            <Saturday/>
             
         </div>
       </div>
