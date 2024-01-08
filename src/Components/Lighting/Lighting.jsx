@@ -7,10 +7,6 @@ import Picker from "../ColorPicker/Picker";
 
 import Slider from "../ColorPicker/Slider/Slider";
 
-
-
-
-
 const Data = [
   {
     id: 1,
@@ -107,28 +103,32 @@ export default function Lighting() {
   const [progress, setProgress] = useState(0);
   const [love, setId] = useState("");
   const [items, setItems] = useState(Data);
+  const [activeTwo, setActiveTwo] = useState(false);
   const [color, setColor] = React.useState({
     hue: 200,
     saturation: 100,
     luminosity: 50,
-    alpha: 1
-});
-// /////////////////////brightness
+    alpha: 1,
+  });
+  // /////////////////////brightness
 
+  const [sliderValue, setSliderValue] = useState(50);
+  function handleSlider(e) {
+    setSliderValue(e.target.value);
+    console.log(sliderValue);
+  }
 
-const [sliderValue, setSliderValue] = useState(50);
-function handleSlider(e) {
-  setSliderValue(e.target.value);
-  console.log(sliderValue)
-}
+  function handleSliderMouseUp() {
+    setActiveTwo(false)
+  }
 
-
-
-
-//////////////////////////////////////
-const onInput = (hue) => {
+  function handleSliderMouseDown() {
+    setActiveTwo(true)
+  }
+  //////////////////////////////////////
+  const onInput = (hue) => {
     setColor({ ...color, hue });
-};
+  };
   let active = true;
   const deleteTimer = 1300;
   function handleClickDelete(id) {
@@ -169,28 +169,24 @@ const onInput = (hue) => {
                 ></div>
                 <span>{data.name}</span>
               </div>
-             
+
               <div
                 onClick={() => handleClickDelete(data.id)}
                 className={styles.icon}
               >
                 <ion-icon name="trash-outline"></ion-icon>
-            
               </div>
             </div>
           ))}
         </div>
 
         <div className={styles.topRight}>
-             
-              {/* <Picker/> */}
-            {/* <RadialColor/> */}
-            {/* <Saturday/> */}
-        {/* <Sunday/> */}
-            <Picker  selectedValue={sliderValue}   />
-           <Slider  sliderValue={sliderValue} handleSlider={handleSlider}  />
-            
-
+          <Picker activeTwo={activeTwo} selectedValue={sliderValue} />
+          <Slider
+            handleSlider={handleSlider}
+            handleSliderMouseDown={handleSliderMouseDown}
+            handleSliderMouseUp={handleSliderMouseUp}
+          />
         </div>
       </div>
     </div>

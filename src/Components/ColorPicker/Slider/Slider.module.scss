@@ -1,7 +1,9 @@
 // Base Colors
 $shade-10: #2c3e50 !default;
 $shade-1: #d7dcdf !default;
+
 $shade-0: #fff !default;
+
 $teal: #1abc9c !default;
 
 
@@ -26,6 +28,7 @@ body {
 .rangeslider {
   // margin: 60px 0 0 0;
   // background-color: #d7dcdf !important;
+  
 }
 
 
@@ -61,6 +64,7 @@ $range-label-width: 60px !default;
 }
 
 .rangeslider {
+  position: relative;
   width: $range-width;
   width: 100% !important;
 
@@ -71,16 +75,17 @@ $range-label-width: 60px !default;
   display: flex;
   justify-content: center;
   align-items: center;
- 
+
 
 }
 
 .rangesliderrange {
+  position: relative;
   -webkit-appearance: none !important;
   width: calc(100% - (#{$range-label-width + 13px}));
   width:100%;
   height: $range-track-height;
-  // height: 5px;
+
   border-radius: 5px;
   background: $range-track-color;
    background-color: rgb(202, 191, 191) !important;
@@ -89,17 +94,28 @@ $range-label-width: 60px !default;
   margin: 0;
 
   // Range Handle
+
+  &::-webkit-slider-runnable-track {
+    position: relative;
+    width: 100%;
+    background-color: #e0e4e3;
+    border-radius: 1rem;
+    
+  }
+ 
+
   &::-webkit-slider-thumb {
     appearance: none !important;
     width: $range-handle-size;
     height: $range-handle-size;
     border-radius: 50%;
     background: $range-handle-color;
-
-
+    box-shadow: 0 0 0 3px white,
+    0 0 0 6px #204A7F;
+   position: relative;
     cursor: pointer;
     transition: background .15s ease-in-out;
-
+    z-index: 4 !important;
     &:hover {
       background: $range-handle-color-hover;
     }
@@ -107,6 +123,7 @@ $range-label-width: 60px !default;
 
   &:active::-webkit-slider-thumb {
     background: $range-handle-color-hover;
+  
   }
 
   &::-moz-range-thumb {
@@ -117,7 +134,7 @@ $range-label-width: 60px !default;
     background: $range-handle-color;
     cursor: pointer;
     transition: background .15s ease-in-out;
-
+   
     &:hover {
       background: $range-handle-color-hover;
     }
@@ -125,7 +142,7 @@ $range-label-width: 60px !default;
 
   &:active::-moz-range-thumb {
     background: $range-handle-color-hover;
-    background: red !important;
+    // background: red !important;
   }
   
   // Focus state
@@ -143,6 +160,7 @@ $range-label-width: 60px !default;
 
 // Range Label
 .rangeslidervalue {
+
   display: inline-block;
   position: relative;
   width: $range-label-width;
@@ -151,6 +169,7 @@ $range-label-width: 60px !default;
   text-align: center;
   border-radius: 3px;
   background: $range-label-color;
+
   padding: 5px 10px;
   margin-left: 8px;
 
@@ -163,6 +182,7 @@ $range-label-width: 60px !default;
     border-top: 7px solid transparent;
     border-right: 7px solid $range-label-color;
     border-bottom: 7px solid transparent;
+
     content: '';
   }
 }
@@ -177,4 +197,16 @@ $range-label-width: 60px !default;
 input::-moz-focus-inner,
 input::-moz-focus-outer { 
   border: 0; 
+}
+
+
+.zee{
+  position: absolute;
+  left: 0;
+  width:0;
+  height:20px;
+ 
+  background-color:skyblue;
+  border-radius: 5px;
+   z-index: 1;
 }

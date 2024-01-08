@@ -8,7 +8,7 @@ import { useRef } from "react";
 
 gsap.registerPlugin(Draggable);
 // eslint-disable-next-line no-unused-vars
-export default function Picker({selectedValue}) {
+export default function Picker({selectedValue , activeTwo}) {
 
   const logRef = useRef(null);
   const spinnerRef = useRef(null);
@@ -32,7 +32,6 @@ export default function Picker({selectedValue}) {
     { color: "red", position: 306 },
     { color: "red", position: 360 },
   ]);
-
 
 
 
@@ -83,7 +82,7 @@ export default function Picker({selectedValue}) {
     
 
     }
-
+      
   },[rotation,colorStops,selectedValue])
 
 
@@ -132,6 +131,11 @@ export default function Picker({selectedValue}) {
         <div  className={styles.mask}>
         <div ref={smoleRef}    className={styles.smole}>
         <ion-icon name="bulb-outline"></ion-icon>
+       
+       <div className={`${styles.value}        ${activeTwo ? 'animate__animated animate__zoomIn':'animate__animated animate__zoomOut'}`}>
+        <span>{selectedValue}</span>
+       </div>
+      
         </div>
       
         </div>
