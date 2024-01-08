@@ -137,7 +137,7 @@ export default function Picker({selectedValue , activeTwo}) {
         <ion-icon name="bulb-outline"></ion-icon>
        
        <div  ref={valueRef}           className={`${styles.value}         ${activeTwo ? 'animate__animated animate__zoomIn':'animate__animated animate__zoomOut '}`}>
-        <span   style={{ color: selectedValue > 70 ? 'black' : 'white' }}     >{selectedValue}</span>
+        <span   style={{ color: selectedValue > 55 ? 'black' : 'white' }}     >{selectedValue}</span>
        </div>
       
         </div>
