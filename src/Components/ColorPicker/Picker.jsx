@@ -55,10 +55,10 @@ export default function Picker({selectedValue}) {
 
   // Set the saturation and lightness values (you can adjust these as needed)
   const saturation = 100; // Example value
-  const lightness = 50; // Example value
+  const lightness =  selectedValue; // Example value
 
   // Create the HSL color string
-  const hslColor = `hsl(${hue}, ${saturation}%, ${selectedValue}%)`;
+  const hslColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 
   return hslColor;
 

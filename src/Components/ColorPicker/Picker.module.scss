@@ -64,13 +64,13 @@
 }
 .secondshand::after {
   position: absolute;
-  top: -1.5rem;
+  top: -2.5rem;
   transform: translateX(-50%);
   border-radius: 50%;
   content: "";
-  width: 3rem;
-  height: 3rem;
-  background-color: rgb(29, 12, 220);
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color:#0861A4;
   z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
 }
 
