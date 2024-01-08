@@ -1,15 +1,20 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import styles from "./Picker.module.scss";
 
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 import { useRef } from "react";
+
 gsap.registerPlugin(Draggable);
-export default function Picker() {
+// eslint-disable-next-line no-unused-vars
+export default function Picker({selectedValue}) {
+
   const logRef = useRef(null);
   const spinnerRef = useRef(null);
   const smoleRef = useRef(null);
   const [rotation, setRotation] = useState(0);
+
 
   const [colorStops, setColorStops] = useState([
     { color: "red", position: 0 },
@@ -28,8 +33,11 @@ export default function Picker() {
     { color: "red", position: 360 },
   ]);
 
-  useEffect(()=>{
 
+
+
+  useEffect(()=>{
+    console.log(selectedValue)
     const calculateBackgroundColor = () => {
       // Ensure currentRotation is positive and within the range [0, 360)
     //   const rotationInDegrees = (currentRotation % 360 + 360 + 90) % 360;
@@ -37,7 +45,7 @@ export default function Picker() {
     //   const colorStop = colorStops.find((stop) => rotationInDegrees <= stop.position);
     
     //   return colorStop ? colorStop.color : colorStops[0].color;
-
+  
 
        // Ensure currentRotation is positive and within the range [0, 360)
 //   const rotationInDegrees = (rotation % 360 + 360 + 90) % 360;
@@ -50,7 +58,7 @@ export default function Picker() {
   const lightness = 50; // Example value
 
   // Create the HSL color string
-  const hslColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+  const hslColor = `hsl(${hue}, ${saturation}%, ${selectedValue}%)`;
 
   return hslColor;
 
@@ -62,21 +70,21 @@ export default function Picker() {
     
   
     const backgroundColor = calculateBackgroundColor();
-  
+
     // console.log("backgroundColor:", backgroundColor);
   
     // Update the background color using the ref
     if (smoleRef.current) {
-      smoleRef.current.style.background = backgroundColor;
-  
+      smoleRef.current.style.color = backgroundColor;
+      smoleRef.current.style.boxShadow = `0px 0px 15px 3px ${backgroundColor}`;
 
 
       // style={{ background: `conic-gradient(${generateConicGradient()})` }}
-
+    
 
     }
 
-  },[rotation,colorStops])
+  },[rotation,colorStops,selectedValue])
 
 
   useEffect(() => {
@@ -121,7 +129,12 @@ export default function Picker() {
           style={{ transform: "translate(0, -50%)" }}
           className={`${styles.secondshand}  ${styles.hand}`}
         ></div>
-        <div ref={smoleRef} className={styles.smole}></div>
+        <div  className={styles.mask}>
+        <div ref={smoleRef}    className={styles.smole}>
+        <ion-icon name="bulb-outline"></ion-icon>
+        </div>
+      
+        </div>
       </div>
 
       </div>

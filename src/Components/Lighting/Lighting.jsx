@@ -1,13 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useItemContext } from "../../Hooks/ItemProvider";
 import styles from "./Lighting.module.scss";
-import Saturday from "../Saturday/Saturday";
-import Themes from "./Themes/Themes";
+
 import ThemesAdd from "./Themes/ThemesAdd";
 import Picker from "../ColorPicker/Picker";
-import Clock from "../Clock/Clock";
-import RadialColor from "./RadialColor/RadialColor";
-import Sunday from "../Sunday/Sunday";
+
+import Slider from "../ColorPicker/Slider/Slider";
 
 
 
@@ -115,7 +113,19 @@ export default function Lighting() {
     luminosity: 50,
     alpha: 1
 });
+// /////////////////////brightness
 
+
+const [sliderValue, setSliderValue] = useState(50);
+function handleSlider(e) {
+  setSliderValue(e.target.value);
+  console.log(sliderValue)
+}
+
+
+
+
+//////////////////////////////////////
 const onInput = (hue) => {
     setColor({ ...color, hue });
 };
@@ -177,7 +187,10 @@ const onInput = (hue) => {
             {/* <RadialColor/> */}
             {/* <Saturday/> */}
         {/* <Sunday/> */}
-            <Picker/>
+            <Picker  selectedValue={sliderValue}   />
+           <Slider  sliderValue={sliderValue} handleSlider={handleSlider}  />
+            
+
         </div>
       </div>
     </div>
