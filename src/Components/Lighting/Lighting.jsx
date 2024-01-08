@@ -119,12 +119,21 @@ export default function Lighting() {
   }
 
   function handleSliderMouseUp() {
-    setActiveTwo(false)
+    setActiveTwo(false);
   }
 
   function handleSliderMouseDown() {
-    setActiveTwo(true)
+    setActiveTwo(true);
   }
+
+  function handleTouchStart() {
+    setActiveTwo(true);
+  }
+
+  function handleTouchEnd() {
+    setActiveTwo(false);
+  }
+
   //////////////////////////////////////
   const onInput = (hue) => {
     setColor({ ...color, hue });
@@ -186,6 +195,8 @@ export default function Lighting() {
             handleSlider={handleSlider}
             handleSliderMouseDown={handleSliderMouseDown}
             handleSliderMouseUp={handleSliderMouseUp}
+            handleTouchStart={handleTouchStart}
+            handleTouchEnd={handleTouchEnd}
           />
         </div>
       </div>

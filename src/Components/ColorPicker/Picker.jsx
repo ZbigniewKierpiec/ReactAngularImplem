@@ -75,7 +75,7 @@ export default function Picker({selectedValue , activeTwo}) {
     // Update the background color using the ref
     if (smoleRef.current) {
       smoleRef.current.style.color = backgroundColor;
-      smoleRef.current.style.boxShadow = `0px 0px 15px 3px ${backgroundColor}`;
+      smoleRef.current.style.boxShadow = `0px 0px 25px 3px ${backgroundColor}`;
 
 
       // style={{ background: `conic-gradient(${generateConicGradient()})` }}
