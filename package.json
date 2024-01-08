@@ -13,6 +13,7 @@
     "@fortawesome/fontawesome-free": "^6.5.1",
     "@radial-color-picker/react-color-picker": "^4.0.1",
     "animate.css": "^4.1.1",
+    "gsap": "^3.12.4",
     "react": "^18.2.0",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",

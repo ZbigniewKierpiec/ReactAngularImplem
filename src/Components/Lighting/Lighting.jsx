@@ -7,6 +7,7 @@ import ThemesAdd from "./Themes/ThemesAdd";
 import Picker from "../ColorPicker/Picker";
 import Clock from "../Clock/Clock";
 import RadialColor from "./RadialColor/RadialColor";
+import Sunday from "../Sunday/Sunday";
 
 
 
@@ -174,9 +175,9 @@ const onInput = (hue) => {
              
               {/* <Picker/> */}
             {/* <RadialColor/> */}
-            <Saturday/>
-            <h1>xxx</h1>
-            
+            {/* <Saturday/> */}
+        {/* <Sunday/> */}
+            <Picker/>
         </div>
       </div>
     </div>
