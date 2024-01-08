@@ -13,6 +13,7 @@ export default function Picker({selectedValue , activeTwo}) {
   const logRef = useRef(null);
   const spinnerRef = useRef(null);
   const smoleRef = useRef(null);
+  const valueRef = useRef(null);
   const [rotation, setRotation] = useState(0);
 
 
@@ -73,6 +74,9 @@ export default function Picker({selectedValue , activeTwo}) {
     // console.log("backgroundColor:", backgroundColor);
   
     // Update the background color using the ref
+    if(valueRef.current){
+      valueRef.current.style.background = backgroundColor;
+    }
     if (smoleRef.current) {
       smoleRef.current.style.color = backgroundColor;
       smoleRef.current.style.boxShadow = `0px 0px 25px 3px ${backgroundColor}`;
@@ -132,7 +136,7 @@ export default function Picker({selectedValue , activeTwo}) {
         <div ref={smoleRef}    className={styles.smole}>
         <ion-icon name="bulb-outline"></ion-icon>
        
-       <div className={`${styles.value}        ${activeTwo ? 'animate__animated animate__zoomIn':'animate__animated animate__zoomOut'}`}>
+       <div  ref={valueRef}           className={`${styles.value}         ${activeTwo ? 'animate__animated animate__zoomIn':'animate__animated animate__zoomOut '}`}>
         <span>{selectedValue}</span>
        </div>
       
