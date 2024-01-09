@@ -147,10 +147,12 @@ $range-label-width: 60px !default;
   
   // Focus state
   &:focus {
-    
+    transition:all .4s linear !important;
     &::-webkit-slider-thumb {
       box-shadow: 0 0 0 3px $shade-0,
-                  0 0 0 6px $teal;
+                  0 0 0 6px $teal,
+                  0 0 0 8px skyblue,
+                  // 0 0 0 10px $teal
     }
 
 
