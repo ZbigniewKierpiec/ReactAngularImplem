@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './Shades.module.scss';
 import "animate.css";
 import { useItemContext } from '../../Hooks/ItemProvider';
@@ -95,8 +95,7 @@ export default function Shades() {
   
   
     }
-
-
+ 
 
 
 
@@ -133,8 +132,8 @@ export default function Shades() {
           ))}
         </div>
 
-        <div className={styles.topRight}>
-           <Shade/>
+        <div     className={styles.topRight}>
+      <Shade/>
         </div>
       </div>
   
