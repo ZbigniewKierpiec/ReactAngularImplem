@@ -153,11 +153,28 @@
 
   height: 95%;
   background-color: #dfe2ea;
-
+  //  background-image: url(/src/assets/image_50393601.JPG);
   z-index: 1;
 
   background-position: center;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .spanText {
+    font-size: 2.5rem;
+    color: black;
+    opacity: 0;
+    &.active {
+      opacity: 1;
+    }
+    &.active2{
+      opacity: 0;
+    }
+  }
+}
+.activeText {
+  color: red;
 }
 
 @keyframes openBlinds {
