@@ -12,77 +12,48 @@ export default function Zaluzje(props) {
   const [number, setNumber] = useState(100);
   const [active, setActive] = useState(false);
   const [active2, setActive2] = useState(false);
- 
+
   // const [activeText, setActiveText] = useState(false);
   const app = useRef(null);
-       
-  
-
-
-
-
-
-  // useEffect(() => {
-  //   const getBoundingClientRect = () => {
-  //     const element = app.current;
-  //     if (element) {
-  //       const rect = element.getBoundingClientRect();
-  //       console.log('Element position:', rect.y);
-  //     }
-  //   };
-
-  //   // Call the function on mount or whenever the component updates
-  //   getBoundingClientRect();
-
-  //   // Optionally, you can add an event listener to recalculate on resize or other events
-  //   window.addEventListener('resize', getBoundingClientRect);
-
-  //   // Cleanup the event listener on component unmount
-  //   return () => {
-  //     window.removeEventListener('resize', getBoundingClientRect);
-  //   };
-  // }, []); // Empty dependency array ensures the effect runs only once on mount
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  const info = useRef(null);
+  const cont=useRef(null);
 
   useEffect(() => {
+    const getBoundingClientRect = () => {
+      const element = info.current;
+      const element2 = app.current;
+      const element3 = cont.current;
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        console.log("Element position one:", rect.y);
+      }
+      if (element2) {
+        const rect = element.getBoundingClientRect();
+        console.log("Element position two:", rect.y);
+      }
 
+      if (element3) {
+        const rect = element.getBoundingClientRect();
+        console.log("Element position three:", rect.y);
+      }
+
+
+
+    };
+
+    // Call the function on mount or whenever the component updates
+    getBoundingClientRect();
+
+    // Optionally, you can add an event listener to recalculate on resize or other events
+    window.addEventListener("resize", getBoundingClientRect);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", getBoundingClientRect);
+    };
+  }, []); // Empty dependency array ensures the effect runs only once on mount
+
+  useEffect(() => {
     gsap.registerPlugin(Draggable);
     let startX, startY;
     const draggableInstance = Draggable.create(app.current, {
@@ -104,52 +75,52 @@ export default function Zaluzje(props) {
         }, 2000);
       },
     });
-    
+
     function updateDirection() {
+      // const getBoundingClientRect = () => {
+      //   const element = app.current;
+      //   if (element) {
+      //     const rectOne = element.getBoundingClientRect();
+      //     console.log("Element1 position:", rectOne.top);
+      //   }
+      //    const elementTwo = info.current;
+      //   if (elementTwo) {
+      //     const rectTwo = element.getBoundingClientRect();
+      //     console.log("Element2 position:", rectTwo.top );
+      //   }
+
+
+      // };
 
 
 
 
 
-
-
-
-      const getBoundingClientRect = () => {
-        const element = app.current;
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          console.log('Element position:', rect );
+      const getDistanceBetweenElements = () => {
+        const elementOne = app.current;
+        const elementTwo = info.current;
+        const elementThree = cont.current;
+        if (elementOne && elementTwo && elementThree) {
+          const rectOne = elementOne.getBoundingClientRect();
+          const rectTwo = elementTwo.getBoundingClientRect();
+          const rectThree = elementThree.getBoundingClientRect();
+          const distance = Math.abs(rectTwo.bottom - rectOne.top);
+          const distance2 = Math.abs(rectTwo.top - rectThree.top);
+          console.log("Distance between Element1 and Element2:", distance2);
+          return distance;
         }
-      };
-  
+      
+        return null; // or handle the case when on
+
+
+      }
+
+
+
+
       // Call the function on mount or whenever the component updates
-      getBoundingClientRect();
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      // getBoundingClientRect();
+      getDistanceBetweenElements();
       const xChange = this.x - startX;
       const yChange = this.y - startY;
       const ratio = Math.abs(xChange / yChange);
@@ -193,11 +164,12 @@ export default function Zaluzje(props) {
   }, []);
 
   return (
-    <div style={{ gridColumn, gridRow }} className={`${styles.box}`}>
+    <div   ref={cont}       style={{ gridColumn, gridRow }} className={`${styles.box}`}>
       <div className={`${styles.mask}  `}>
         <div ref={app} className={styles.blind}>
           <div className={styles.info}>
             <span
+              ref={info}
               className={`${styles.text}   ${active2 ? styles.active : ""}  `}
             >
               {number}
