@@ -6,13 +6,13 @@ import { gsap, Draggable } from "gsap/all";
 
 gsap.registerPlugin(Draggable);
 
-export default function Zaluzje(props ) {
+export default function Zaluzje(props) {
   const { gridColumn, gridRow } = props;
   const [direction, setDirection] = useState("down");
   const [number, setNumber] = useState(100);
+  const [active, setActive] = useState(false);
+  const [active2, setActive2] = useState(false);
   const app = useRef(null);
-
-
 
   useEffect(() => {
     gsap.registerPlugin(Draggable);
@@ -26,6 +26,14 @@ export default function Zaluzje(props ) {
         startY = this.y;
       },
       onDrag: updateDirection,
+
+      onDragEnd: function () {
+        // Handle drag end event
+        setActive(false);
+        setTimeout(()=>{
+           setActive2(false)
+        },2000)
+      },
     });
 
     function updateDirection() {
@@ -33,7 +41,10 @@ export default function Zaluzje(props ) {
       const yChange = this.y - startY;
       const ratio = Math.abs(xChange / yChange);
       const newDirection = [];
-
+      if (newDirection) {
+        setActive(true);
+        setActive2(true)
+      }
       if (ratio > 0.25) {
         newDirection.push(xChange < 0 ? "left" : "right");
       }
@@ -68,17 +79,18 @@ export default function Zaluzje(props ) {
   }, []);
 
   return (
-    <div      style={{ gridColumn , gridRow}}    className={`${styles.box}`}>
-   
+    <div style={{ gridColumn, gridRow }} className={`${styles.box}`}>
       <div className={`${styles.mask}  `}>
         <div ref={app} className={styles.blind}>
           <div className={styles.info}>
-            <span className={styles.text}>{number}</span>
+            <span className={`${styles.text}  ${active2 ? styles.active : ""}`}>
+              {number}
+            </span>
 
             <span
-              className={` ${styles.icon}   ${
+              className={`${styles.icon} ${
                 direction === "up" ? styles.down : styles.up
-              }`}
+              } ${active ? styles.active : ""}`}
             >
               <ion-icon name="chevron-up-outline"></ion-icon>
             </span>
@@ -90,3 +102,5 @@ export default function Zaluzje(props ) {
     </div>
   );
 }
+
+// className={` ${styles.icon}   ${direction === "up" ? styles.down : styles.up}   ${active ?'animate__animated animate__fadeInUp':'animate__animated animate__fadeOutDown animate__delay-2s  '}        `}

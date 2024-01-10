@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
-import styles from './Shades.module.scss';
+import React, { useEffect, useRef, useState } from "react";
+import styles from "./Shades.module.scss";
 import "animate.css";
-import { useItemContext } from '../../Hooks/ItemProvider';
-import ThemesAdd from '../Lighting/Themes/ThemesAdd';
-import Zaluzje from '../Zaluzje/Zaluzje';
+import { useItemContext } from "../../Hooks/ItemProvider";
+import ThemesAdd from "../Lighting/Themes/ThemesAdd";
+import Zaluzje from "../Zaluzje/Zaluzje";
 
 const Data = [
   {
@@ -75,37 +75,32 @@ const Data = [
     color: "#98BF64",
     active: true,
   },
-
 ];
-
 
 export default function Shades() {
   const [items, setItems] = useState(Data);
-    const { clickedItem } = useItemContext();
-    const [love, setId] = useState("");
-    let active = true;
-    const deleteTimer = 1300;
+  const { clickedItem } = useItemContext();
+  const [love, setId] = useState("");
+  let active = true;
+  const deleteTimer = 1300;
 
-    function handleClickDelete(id) {
-      setId(id);
-  
-      setTimeout(() => {
-        setItems((prevItems) => prevItems.filter((item) => item.id !== id));
-      }, deleteTimer);
-  
-  
-    }
- 
+  function handleClickDelete(id) {
+    setId(id);
 
-
+    setTimeout(() => {
+      setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    }, deleteTimer);
+  }
 
   return (
-    <div className={`${styles.box}  ${active ? 'animate__animated animate__fadeIn animate__slower 2s ':''}`}>
-
-
+    <div
+      className={`${styles.box}  ${
+        active ? "animate__animated animate__fadeIn animate__slower 2s " : ""
+      }`}
+    >
       <div className={styles.container}>
         <div className={styles.topLeft}>
-        <ThemesAdd />
+          <ThemesAdd />
 
           {items.map((data) => (
             <div
@@ -132,16 +127,14 @@ export default function Shades() {
           ))}
         </div>
 
-        <div     className={styles.topRight}>
-         <Zaluzje gridColumn={`3 /span 4`} gridRow={`4 / span 5`}      />
-         {/* <Zaluzje column={'8 span / 5'} row={'4 / span 5'}    />  
-        <Zaluzje column={'8 span / 5'}  row={'5 / span 5'}   />  */}
+        <div className={styles.topRight}>
+          <Zaluzje gridColumn={`2 /span 4`} gridRow={`1 / span 4`}     />
+          <Zaluzje gridColumn={`7 /span 4`} gridRow={`1 / span 4`} />
+          <Zaluzje gridColumn={`2 /span 4`} gridRow={`5 / span 4`} />
+          <Zaluzje gridColumn={`2 /span 4`} gridRow={`9/ span 4`} />
+          <Zaluzje gridColumn={`7 /span 4`} gridRow={`5 / span 4`} />
         </div>
       </div>
-  
-        
-
-
     </div>
-  )
+  );
 }

@@ -1,46 +1,43 @@
 .box {
   position: relative;
-  background-color:#FAF9FC;
+  background-color: #faf9fc;
   // grid-column: 2 / span 4;
   grid-row: 1 / span 5;
   padding-top: 0.5rem;
-    padding-bottom: 4rem;
+  padding-bottom: 4rem;
 
-  //   overflow: hidden;
- border-top: 1px solid rgba(0, 0, 0, 0.183);
+  border-top: 1px solid rgba(0, 0, 0, 0.183);
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 
-&::after{
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 4px;
-  background-color: white;
-  z-index: 9999999999999999999999999 !important;
-  border: 1px solid rgba(0, 0, 0, 0.132);
-  border-bottom: none;
-}
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    z-index: 9999999999999999999999999 !important;
+    border: 1px solid rgba(0, 0, 0, 0.132);
+    border-bottom: none;
+  }
 }
 .mask {
   position: relative;
   width: 100%;
   height: 100%;
-
-
 }
 .blind {
-  position:absolute !important;
+  position: absolute !important;
 
   // top: 0;
   top: 0 !important;
   // width: 100%;
   // height: 100%;
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
   z-index: 999 !important;
   background-color: #21679f !important;
 
@@ -61,7 +58,7 @@ height: 100%;
     font-family: "Font Awesome 5 Free";
     content: "\f111";
     color: white;
-    color: red;
+
     width: 50px;
     height: 40px;
     background-color: transparent;
@@ -82,66 +79,69 @@ height: 100%;
   }
 }
 
-.info{
-  position:absolute;
+.info {
+  position: fixed !important;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
   height: 50px;
-  
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   align-items: center;
-   z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
- 
- 
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
+  overflow: hidden;
 }
-.text{
+.text {
   // position: absolute;
   // top: 0;
   font-size: 2.5rem;
-  color:white;
+  color: white;
+  transition: opacity 0.5s linear;
   display: block;
   margin-bottom: -1rem;
- 
+  opacity: 0;
 }
-.icon{
+.icon {
   // transition: all .7s linear;
   transform-origin: 50 50 !important;
   display: block;
-  ion-icon{
+  opacity: 0;
+
+  //  transform: translateY(20px) !important;
+
+  transition: 0.3s ease-in-out !important;
+  ion-icon {
     font-size: 2.5rem;
-    color:white;
- 
+    color: white;
   }
-
-
 }
 
-.up{
-  transition: all .3s linear;
+.up {
+  transition: all 0.3s linear;
   transform: rotate(180deg);
   transform-origin: 50 50 !important;
-  font-size: .7rem;
-
+  font-size: 0.7rem;
 }
-.down{
-  transition: all .3s linear;
+.down {
+  transition: all 0.3s linear;
   transform: rotate(0deg);
-  transform-origin:50 50 !important;
-  font-size: .7rem;
-
+  transform-origin: 50 50 !important;
+  font-size: 0.7rem;
 }
 
-.bounds{
-
+.active {
+  opacity: 1;
+  // transform: rotate(180deg) !important;
+  // transform: translateY(0) !important;
+  // transform-origin: 50 50 !important;
+}
+.bounds {
   width: 100%; /* Set the width of the bounds container */
-  height:100%; /* Set the height of the bounds container */
-
+  height: 100%; /* Set the height of the bounds container */
 }
-
 
 .blindBackground {
   position: absolute;
@@ -151,10 +151,13 @@ height: 100%;
   transform: translateX(-50%);
   width: 90%;
 
-  height: 90%;
-  background-color:#DFE2EA;
+  height: 95%;
+  background-color: #dfe2ea;
 
   z-index: 1;
+
+  background-position: center;
+  background-size: cover;
 }
 
 @keyframes openBlinds {
