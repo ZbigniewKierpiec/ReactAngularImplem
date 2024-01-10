@@ -1,16 +1,18 @@
 .box {
   position: relative;
   background-color:#FAF9FC;
-  grid-column: 2 / span 4;
+  // grid-column: 2 / span 4;
   grid-row: 1 / span 5;
   padding-top: 0.5rem;
-  //   padding-bottom: 4rem;
+    padding-bottom: 4rem;
+
   //   overflow: hidden;
  border-top: 1px solid rgba(0, 0, 0, 0.183);
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
 &::after{
   content: '';
   position: absolute;
@@ -28,15 +30,17 @@
   width: 100%;
   height: 100%;
 
+
 }
 .blind {
   position:absolute !important;
 
   // top: 0;
   top: 0 !important;
-  width: 100%;
-  height: 100%;
-
+  // width: 100%;
+  // height: 100%;
+width: 100%;
+height: 100%;
   z-index: 999 !important;
   background-color: #21679f !important;
 
@@ -90,7 +94,7 @@
    flex-direction: column;
    justify-content: space-around;
    align-items: center;
- 
+   z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
  
  
 }
@@ -131,7 +135,12 @@
 
 }
 
+.bounds{
 
+  width: 100%; /* Set the width of the bounds container */
+  height:100%; /* Set the height of the bounds container */
+
+}
 
 
 .blindBackground {

@@ -3,7 +3,7 @@ import styles from './Shades.module.scss';
 import "animate.css";
 import { useItemContext } from '../../Hooks/ItemProvider';
 import ThemesAdd from '../Lighting/Themes/ThemesAdd';
-import Shade from './Shade/Shade';
+import Zaluzje from '../Zaluzje/Zaluzje';
 
 const Data = [
   {
@@ -133,11 +133,13 @@ export default function Shades() {
         </div>
 
         <div     className={styles.topRight}>
-      <Shade/>
+         <Zaluzje gridColumn={`3 /span 4`} gridRow={`4 / span 5`}      />
+         {/* <Zaluzje column={'8 span / 5'} row={'4 / span 5'}    />  
+        <Zaluzje column={'8 span / 5'}  row={'5 / span 5'}   />  */}
         </div>
       </div>
   
-
+        
 
 
     </div>
