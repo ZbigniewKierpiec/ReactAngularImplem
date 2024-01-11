@@ -13,6 +13,7 @@ export default function Zaluzje(props) {
   const [active, setActive] = useState(false);
   const [active2, setActive2] = useState(false);
   const [activeInfo, setActiveInfo] = useState(false);
+  const[activeInfoTwo,setActiveInfoTwo]=useState(true);
 
   // const [activeText, setActiveText] = useState(false);
   const app = useRef(null);
@@ -71,6 +72,13 @@ export default function Zaluzje(props) {
         setTimeout(() => {
           setActive2(false);
         }, 2000);
+
+
+        setTimeout(() => {
+          setActiveInfoTwo(false)
+         },3000);
+
+
       },
     });
 
@@ -104,6 +112,7 @@ export default function Zaluzje(props) {
           console.log("Distance between Element1 and Element2:", formated);
           if (formated >= 110) {
             setActiveInfo(true);
+          
           }else{
             setActiveInfo(false)
           }
@@ -113,6 +122,9 @@ export default function Zaluzje(props) {
 
         return null; // or handle the case when on
       };
+
+       setActiveInfoTwo(true)
+
 
       // Call the function on mount or whenever the component updates
       // getBoundingClientRect();
@@ -182,12 +194,7 @@ export default function Zaluzje(props) {
         </div>
 
         <div className={styles.blindBackground}>
-          <span
-            className={`${styles.spanText}  ${
-              activeInfo
-                ? "animate__animated animate__fadeInDown"
-                : "animate__animated animate__fadeOutUp"
-            }      `}
+          <span className={`${styles.spanText}  ${ activeInfo ? "animate__animated animate__fadeInDown": "animate__animated animate__fadeOutUp"} ${!activeInfoTwo ? styles.activeTwo : ''}     `}
           >
             {number}
           </span>
