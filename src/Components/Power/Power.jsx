@@ -132,9 +132,12 @@ export default function Power() {
       }`}
     >
       <div className={styles.container}>
+      <div className={styles.PDU}>
+            <p>PDUs</p>
+           </div>
         <div className={styles.topLeft}>
-          <ThemesAdd text={"PDUs"} />
-
+          {/* <ThemesAdd text={"PDUs"} /> */}
+           
           {items.map((data) => (
             <div
               onClick={() => handleClick(data)}
