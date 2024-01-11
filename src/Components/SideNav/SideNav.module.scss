@@ -29,7 +29,7 @@
 
   background-color: #e2e2e6;
   transition: width 0.2s linear;
-
+  overflow:hidden;
   &.darkmode {
     background: #333538 !important;
     border-color: #333538 !important;

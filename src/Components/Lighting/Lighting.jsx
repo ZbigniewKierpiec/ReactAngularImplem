@@ -162,7 +162,7 @@ export default function Lighting() {
     >
       <div className={styles.container}>
         <div className={styles.topLeft}>
-          <ThemesAdd />
+          <ThemesAdd  icon={'add-outline'}       />
 
           {items.map((data) => (
             <div

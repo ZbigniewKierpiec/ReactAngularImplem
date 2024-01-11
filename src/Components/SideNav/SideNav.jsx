@@ -134,7 +134,7 @@ export default function SideNav({ active, setActive, onItemClick }) {
                     isDarkMode ? styles.darkmode : ""
                   }   ${
                     active
-                      ? `${styles.active} animate__animated animate__fadeInDown animate__slow  animate__delay-1s	 `
+                      ? `${styles.active} animate__animated animate__fadeInRight animate__slow  animate__delay-1s	 `
                       : "animate__animated animate__fadeOutRight  animate__faster"
                   }`}
                 >
