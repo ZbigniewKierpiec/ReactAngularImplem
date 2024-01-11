@@ -12,11 +12,12 @@ export default function Zaluzje(props) {
   const [number, setNumber] = useState(100);
   const [active, setActive] = useState(false);
   const [active2, setActive2] = useState(false);
+  const [activeInfo, setActiveInfo] = useState(false);
 
   // const [activeText, setActiveText] = useState(false);
   const app = useRef(null);
   const info = useRef(null);
-  const cont=useRef(null);
+  const cont = useRef(null);
 
   useEffect(() => {
     const getBoundingClientRect = () => {
@@ -36,9 +37,6 @@ export default function Zaluzje(props) {
         const rect = element.getBoundingClientRect();
         console.log("Element position three:", rect.y);
       }
-
-
-
     };
 
     // Call the function on mount or whenever the component updates
@@ -89,12 +87,7 @@ export default function Zaluzje(props) {
       //     console.log("Element2 position:", rectTwo.top );
       //   }
 
-
       // };
-
-
-
-
 
       const getDistanceBetweenElements = () => {
         const elementOne = app.current;
@@ -105,18 +98,21 @@ export default function Zaluzje(props) {
           const rectTwo = elementTwo.getBoundingClientRect();
           const rectThree = elementThree.getBoundingClientRect();
           const distance = Math.abs(rectTwo.bottom - rectOne.top);
-          const distance2 = Math.abs(rectTwo.top - rectThree.top);
-          console.log("Distance between Element1 and Element2:", distance2);
+          const distance2 = Math.abs(rectOne.top - rectThree.top);
+          let formated = Math.ceil(distance2);
+
+          console.log("Distance between Element1 and Element2:", formated);
+          if (formated >= 110) {
+            setActiveInfo(true);
+          }else{
+            setActiveInfo(false)
+          }
+
           return distance;
         }
-      
+
         return null; // or handle the case when on
-
-
-      }
-
-
-
+      };
 
       // Call the function on mount or whenever the component updates
       // getBoundingClientRect();
@@ -164,7 +160,7 @@ export default function Zaluzje(props) {
   }, []);
 
   return (
-    <div   ref={cont}       style={{ gridColumn, gridRow }} className={`${styles.box}`}>
+    <div ref={cont} style={{ gridColumn, gridRow }} className={`${styles.box}`}>
       <div className={`${styles.mask}  `}>
         <div ref={app} className={styles.blind}>
           <div className={styles.info}>
@@ -186,7 +182,15 @@ export default function Zaluzje(props) {
         </div>
 
         <div className={styles.blindBackground}>
-          <span className={`${styles.spanText}`}>{number}</span>
+          <span
+            className={`${styles.spanText}  ${
+              activeInfo
+                ? "animate__animated animate__fadeInDown"
+                : "animate__animated animate__fadeOutUp"
+            }      `}
+          >
+            {number}
+          </span>
         </div>
       </div>
     </div>
