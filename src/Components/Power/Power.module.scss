@@ -63,7 +63,7 @@
 
 .powerAll {
   height: 8rem;
-  background-color: yellowgreen;
+ 
   grid-column: 2 / span 3;
   grid-row: 11 / span 1;
   border-top-right-radius: 4rem;
@@ -74,12 +74,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 1.5rem;
+  border: 2px solid black;
+  color: #2B61A4;
+  cursor: pointer;
+  &:active  {
+    border: 2px solid rgba(0, 0, 0, 0.297);
+    &:active{
+      color: rgba(0, 0, 0, 0.297);
+    }
+  }
   span {
     font-size: 1.4rem;
     text-transform: capitalize;
+    
   }
   ion-icon {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 .topRight {
