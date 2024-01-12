@@ -158,6 +158,15 @@ export default function Power() {
               </div> */}
             </div>
           ))}
+
+
+
+        </div>
+
+        <div className={styles.powerAll}>
+
+          <span><ion-icon name="flash-outline"></ion-icon></span>     <span>poewr off all</span>
+
         </div>
 
         <div className={styles.topRight}>
