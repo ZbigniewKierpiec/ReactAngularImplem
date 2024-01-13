@@ -213,8 +213,24 @@ export default function Matrix() {
   const { clickedItem } = useItemContext();
   let active = true;
   const [items, setItems] = useState(Data);
+  const[checkboxState , setCheckboxState]=useState({});
+
+function handleClick(id) {
+  // setActive(id)
+  setCheckboxState((prevState)=>({
+    ...prevState,
+    [id]: !prevState[id] || false,
+  }))
+  
+}
+
+
+
+  function handleChange() {
+    
+  }
   return (
-    <div
+    <div  
       className={`${styles.box}  ${
         active ? "animate__animated animate__fadeIn animate__slower 2s " : ""
       }`}
@@ -230,6 +246,7 @@ export default function Matrix() {
            
           {items.map((data) => (
             <div
+            onClick={()=>handleClick(data.id)}
            
               className={`${styles.boxTwo}`}
               key={data.id}
@@ -237,7 +254,7 @@ export default function Matrix() {
               <div className={styles.boxTwoLeft}>
                 <span>{data.name}</span>
               </div>
-             
+              <input   onChange={()=>handleChange(data.id)} checked={checkboxState[data.id] || false}          type="checkbox" name="" id="" />
             </div>
           ))}
 
