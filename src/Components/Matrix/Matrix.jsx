@@ -361,6 +361,7 @@ const DataTwo = [
 export default function Matrix() {
 
   const [items, setItems] = useState(Data);
+<<<<<<< HEAD
   const [itemsTwo, setItemsTwo] = useState(DataTwo);
  
   const [checked, setIsChecked] = useState(false);
@@ -399,8 +400,26 @@ let active=true;
 
   ////////////////////////////////////////////////////////////
 
+=======
+  const[checkboxState , setCheckboxState]=useState({});
+
+function handleClick(id) {
+  // setActive(id)
+  setCheckboxState((prevState)=>({
+    ...prevState,
+    [id]: !prevState[id] || false,
+  }))
+  
+}
+
+
+
+  function handleChange() {
+    
+  }
+>>>>>>> 01741261949bd57907132bfbfd87fc3686ed00ba
   return (
-    <div
+    <div  
       className={`${styles.box}  ${
         active ? "animate__animated animate__fadeIn animate__slower 2s " : ""
       }`}
@@ -414,7 +433,12 @@ let active=true;
 
           {items.map((data) => (
             <div
+<<<<<<< HEAD
               onClick={() => handleClick(data.id)}
+=======
+            onClick={()=>handleClick(data.id)}
+           
+>>>>>>> 01741261949bd57907132bfbfd87fc3686ed00ba
               className={`${styles.boxTwo}`}
               key={data.id}
             >
@@ -443,6 +467,10 @@ let active=true;
 
                 {/* |----------------------------------------------------------| */}
               </div>
+<<<<<<< HEAD
+=======
+              <input   onChange={()=>handleChange(data.id)} checked={checkboxState[data.id] || false}          type="checkbox" name="" id="" />
+>>>>>>> 01741261949bd57907132bfbfd87fc3686ed00ba
             </div>
           ))}
         </div>
