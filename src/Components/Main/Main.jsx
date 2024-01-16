@@ -44,7 +44,7 @@ const reducer = (state, action) => {
 
     default:
       // If no specific case matches, return the default home component
-      return { component: <Matrix/> };
+      return { component: <Settings/> };
   }
 };
 export default function Main({ active }) {
